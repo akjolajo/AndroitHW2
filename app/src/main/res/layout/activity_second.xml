@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".second_activity">
+    tools:context=".Second_activity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/userphoto"
@@ -16,12 +16,7 @@
         android:layout_height="85dp"
         app:cardCornerRadius="250dp"
         app:cardBackgroundColor="@color/white">
-        <androidx.cardview.widget.CardView
 
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:cardCornerRadius="250dp"
-            android:layout_gravity="center">
 
             <ImageView
                 android:id="@+id/iv_from_camera"
@@ -29,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
 
-        </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
 
 
@@ -38,6 +33,7 @@
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:hint="name"
         app:layout_constraintTop_toBottomOf="@+id/userphoto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +45,7 @@
         android:id="@+id/usersurname"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:hint="surname"
         app:layout_constraintTop_toBottomOf="@+id/username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,16 +67,18 @@
         android:id="@+id/SAemail"
         android:layout_width="0dp"
         android:layout_height="46dp"
-        app:layout_constraintTop_toBottomOf="@+id/SAtexthelper"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/teal_200"
+        android:layout_marginHorizontal="46dp"
         android:layout_marginTop="24dp"
-        android:layout_marginHorizontal="46dp"/>
+        android:background="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SAtexthelper" />
     <EditText
         android:id="@+id/namber"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:hint="namber"
+        android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/SAemail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +89,7 @@
         android:id="@+id/SApassword"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/namber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

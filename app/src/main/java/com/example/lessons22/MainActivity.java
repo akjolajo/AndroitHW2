@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,17 +28,22 @@ public class MainActivity extends AppCompatActivity {
         go = findViewById(R.id.button_go);
         forgotPassword = findViewById(R.id.forgetpassword);
         imageCar = findViewById(R.id.image_car);
+        setImageCar();
 
 
-        Picasso.get().load(url).into(imageCar);
+        go.setOnClickListener(v -> {
+            if (password.getText().toString().length() > 6) {
+                Intent intent = new Intent(MainActivity.this, Second_activity.class);
+                intent.putExtra("login",email.getText().toString());
+                intent.putExtra("pass",password.getText().toString());
+                startActivity(intent);
+            }
+        });
+    }
+    private void setImageCar(){
+        String URI = "https://i.pinimg.com/474x/23/ab/a6/23aba60b66ef08174bb7455c4a8a2d2f.jpg";
+        Glide.with(MainActivity.this).load(URI).into(imageCar);
 
-
-            go.setOnClickListener(v ->{
-                if(password.getText().toString().length() > 6) {
-                    Intent intent = new Intent(MainActivity.this, second_activity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+    }
     }
 
